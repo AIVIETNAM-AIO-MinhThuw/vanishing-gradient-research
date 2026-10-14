@@ -48,6 +48,31 @@ class BalancedProbeMeasurementTests(unittest.TestCase):
         for expected, observed in zip(source.parameters(), loaded.parameters()):
             self.assertTrue(torch.equal(expected, observed))
 
+    def test_completed_posthoc_artifact_preserves_indices_weights_and_formulas(self) -> None:
+        result_dir = Path("results/experiment_v2/posthoc-balanced-probes-20261014T2125")
+        raw = json.loads((result_dir / "raw_posthoc_results.json").read_text())
+        audit = json.loads((result_dir / "posthoc_audit.json").read_text())
+        verification = json.loads((result_dir / "verification.json").read_text())
+        gradient_sets = {
+            tuple(row["dataset_index"] for row in checkpoint["probe_rows"])
+            for checkpoint in raw["gradient_results"]
+        }
+        jacobian_sets = {
+            tuple(row["dataset_index"] for row in checkpoint["rows"])
+            for checkpoint in raw["jacobian_results"]
+        }
+        self.assertEqual(len(gradient_sets), 1)
+        self.assertEqual(len(jacobian_sets), 1)
+        self.assertEqual(audit["loaded_checkpoint_count"], 60)
+        self.assertEqual(audit["unique_loaded_checkpoint_count"], 60)
+        self.assertFalse(audit["training_executed"])
+        self.assertTrue(audit["source_artifacts_unchanged"])
+        self.assertEqual(verification["status"], "PASS")
+        self.assertTrue(verification["checks"]["gradient_formulas_consistent"])
+        script = Path("scripts/measure_balanced_probes_v2.py").read_text(encoding="utf-8")
+        self.assertNotIn("torch.optim", script)
+        self.assertNotIn(".backward(", script)
+
 
 if __name__ == "__main__":
     unittest.main()
