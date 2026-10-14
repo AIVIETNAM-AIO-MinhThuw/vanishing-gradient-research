@@ -1,3 +1,4 @@
+# Local environments and caches
 .venv/
 __pycache__/
 *.py[cod]
@@ -5,10 +6,35 @@ __pycache__/
 .idea/
 .vscode/
 .DS_Store
-*.log
+
+# Downloaded datasets and runtime logs
 data/
-results/benchmark/
-results/pilot/
-results/audits/
-results/experiment_v2/
+*.log
+
+# Model weights and packaged handoffs belong in a GitHub Release, not Git.
+*.pt
+*.pth
+*.ckpt
+*.zip
+
+# Large/raw result payloads. Small CSV/SVG summaries, audit metadata,
+# reproduction documents, and test records remain eligible for Git.
+results/**/checkpoints/
+results/**/raw_results.json
+results/**/raw_posthoc_results.json
+results/**/supplementary_jacobian.json
+results/**/primary_manifest.json
+results/**/data_and_batch_manifest.json
+results/**/primary_*.json
+results/**/diagnostic_*.json
+
+# Audit bundles may contain complete copies of code, protocols, and source
+# artifacts. Keep the audit tables/reports, not their duplicate payloads.
+results/audits/**/code_snapshot/
+results/audits/**/protocol/
+results/audits/**/source_artifacts/
+
+# Duplicate handoff directories. Canonical run directories are documented in
+# ARTIFACTS.md; archives are retained locally and published as Release assets.
+results/**/handoff-*/
 

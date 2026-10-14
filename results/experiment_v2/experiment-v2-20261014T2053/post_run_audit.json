@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "checks": {
+    "12_primary_runs": true,
+    "depth_seed_grid_complete": true,
+    "five_frozen_checkpoints_each": true,
+    "fixed_16_probes_everywhere": true,
+    "split_counts_and_disjointness": true,
+    "official_test_unused": true,
+    "batch_orders_complete": true,
+    "evaluation_sample_counts": true,
+    "no_recorded_errors": true,
+    "gradient_formulas_recomputed": true,
+    "all_checked_primary_values_finite": true,
+    "60_checkpoint_files_hash_verified": true,
+    "all_checkpoint_tensors_finite": true,
+    "27_complete_jacobian_snapshots": true,
+    "jacobian_values_finite": true,
+    "no_directional_gain_exclusions": true
+  },
+  "max_gap_formula_error": 1.2214900024787312e-07,
+  "max_normalized_gap_formula_error": 5.5637303868205645e-08,
+  "nonfinite_primary_value_count": 0,
+  "checkpoint_hash_failures": [],
+  "checkpoint_nonfinite_tensor_count": 0,
+  "jacobian_nonfinite_value_count": 0,
+  "directional_gain_exclusion_count": 0
+}

@@ -1,0 +1,10 @@
+Commands:
+.venv\Scripts\python.exe -m unittest tests.test_rq2_analysis -v
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+The focused checks verify the exact gap-sign interpretation and the threshold-free
+coexistence conjunction. The full-suite result is recorded after final verification.
+
+Observed on 2026-10-14 after analysis:
+- Focused RQ2 tests: 2 passed, 0 failed, 0 errors.
+- Full project suite: 26 passed, 0 failed, 0 errors.

@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-14T12:17:33.310872+00:00",
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "device": "cpu"
+  },
+  "timings": [
+    {
+      "hidden_layers": 3,
+      "ten_training_steps_seconds": 0.10555690014734864,
+      "per_sample_gradient_seconds": 0.004424300044775009,
+      "three_jacobians_seconds": 0.01540320017375052
+    },
+    {
+      "hidden_layers": 12,
+      "ten_training_steps_seconds": 0.08567809988744557,
+      "per_sample_gradient_seconds": 0.0025723001454025507,
+      "three_jacobians_seconds": 0.0161657000426203
+    }
+  ],
+  "estimate": {
+    "primary_training_and_probe_seconds": 6.408723619300872,
+    "supplementary_spectrum_seconds": 0.7576536051928997,
+    "combined_seconds_before_evaluation_overhead": 7.166377224493772,
+    "note": "Linear extrapolation from 10 steps and one fixed sample; actual runtime is recorded by the pilot."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": {
+    "classification_is_post_hoc_exploratory": true,
+    "claim_remains_unverified": true,
+    "40_balanced_gradient_probes": true,
+    "20_balanced_jacobian_probes": true,
+    "jacobian_subset_of_gradient": true,
+    "no_training_overlap": true,
+    "official_test_unused": true,
+    "all_models_same_gradient_indices": true,
+    "all_models_same_jacobian_indices": true,
+    "60_saved_checkpoints_loaded": true,
+    "no_training_executed": true,
+    "source_v2_unchanged": true,
+    "gradient_formulas_consistent": true,
+    "no_nonfinite_values": true,
+    "expected_measurement_counts": true
+  },
+  "max_gap_formula_error": 2.1495881658006866e-07,
+  "max_normalized_gap_formula_error": 9.556303242827524e-08,
+  "gradient_comparison_rows": 120,
+  "gradient_numerical_change_flag_rows": 51,
+  "jacobian_comparison_rows": 81,
+  "jacobian_numerical_change_flag_rows": 25,
+  "note": "Numerical change flags use frozen descriptive thresholds and are not statistical significance tests."
+}

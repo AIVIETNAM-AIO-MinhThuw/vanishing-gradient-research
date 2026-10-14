@@ -1,0 +1,56 @@
+{
+  "protocol_version": "followup-evidence-1",
+  "status": "FROZEN_BEFORE_RUN",
+  "classification": "follow_up_experiment_designed_after_reviewing_v2",
+  "created_at": "2026-10-14T23:08:58.7609857+07:00",
+  "source_v2_run_id": "experiment-v2-20261014T2053",
+  "source_posthoc_run_id": "posthoc-balanced-probes-20261014T2125",
+  "source_git_revision": "53b0ddedc583204cbed218b610e38fad0b392a9a",
+  "preregistration_claim": false,
+  "runtime_budget_seconds": 600,
+  "priority": ["part_a_parameter_measurements", "part_b_joined_evidence", "part_c_followup_conditions"],
+  "part_a": {
+    "training_authorized": false,
+    "checkpoint_count": 60,
+    "fixed_evaluation_batch": "the persisted 40 label-balanced validation probes from posthoc-balanced-probes-20261014T2125",
+    "loss": "CrossEntropyLoss mean over the fixed 40-sample batch",
+    "parameter_scope": "weight matrix of every hidden Linear layer and the output Linear layer",
+    "gradient_norm": "L2/Frobenius norm of dL/dW at the checkpoint",
+    "relative_gradient_norm": "||dL/dW||_F / ||W||_F",
+    "relative_one_step_update_estimate": "0.01 * ||dL/dW||_F / ||W||_F",
+    "net_displacement": "||W_t2-W_t1||_F / ||W_t1||_F for consecutive saved checkpoints",
+    "denominator_threshold": 1e-12,
+    "interpretation_limit": "The one-step estimate is local at a checkpoint; displacement is a net endpoint difference. No historical per-step update log exists."
+  },
+  "part_b": {
+    "gradient_source": "post-hoc balanced 40-probe measurements",
+    "evaluation_source": "original V2 full training/validation evaluation",
+    "threshold_policy": "No accuracy or gradient threshold is selected post hoc.",
+    "claim_policy": "Without a predeclared joint criterion, report INCONCLUSIVE rather than assert coexistence."
+  },
+  "part_c": {
+    "enabled_after_parts_a_b": true,
+    "baseline": "V2 D=12 Tanh Xavier gain=1.0",
+    "arms": [
+      {"arm_id": "followup_d12_tanh_gain_0_5", "activation": "tanh", "xavier_gain": 0.5},
+      {"arm_id": "followup_d12_sigmoid_gain_1_0", "activation": "sigmoid", "xavier_gain": 1.0}
+    ],
+    "seeds": [42, 123, 2026],
+    "steps": 600,
+    "checkpoints": [0, 25, 100, 300, 600],
+    "fixed_from_v2": "train/validation indices, batch order, width=128, SGD lr=0.01 without momentum, batch=64",
+    "probe_policy": "same persisted 40 balanced validation probes",
+    "official_test_used": false,
+    "comparison_limit": "Compare each follow-up arm only with the corresponding V2 D=12 baseline; do not pool with pilot V1 gain=0.5."
+  },
+  "stop_conditions": [
+    "Stop if a source checkpoint is missing or its SHA-256 differs from checkpoint_manifest.json.",
+    "Stop on NaN or Inf in loss, parameter gradients, activation gradients or stored metrics.",
+    "Stop before Part C if Parts A/B are incomplete.",
+    "Stop at 600 seconds and preserve completed artifacts.",
+    "Never overwrite V1, V2, post-hoc or an existing follow-up output directory.",
+    "Do not change learning rate, step count, initialization or activation after inspecting results."
+  ],
+  "claim_status": "unverified",
+  "ai_assistance": "AI implemented bounded measurements and execution support; the researcher owns interpretation and final claims."
+}

@@ -20,3 +20,7 @@ Ngày 14/10/2026, AI hỗ trợ triển khai đường chạy v2 đã đóng bă
 
 Sau kiểm toán độc lập phát hiện gradient/Jacobian probes v2 đều thuộc class 0, AI hỗ trợ một phép đo bổ sung hậu nghiệm trên probe cân bằng nhãn bằng cách chỉ đọc 60 checkpoint weights đã lưu. Phép đo này không chạy training, không sửa v2, không được mô tả như preregistered và không thay người nghiên cứu diễn giải kết quả.
 
+Ngày 14/10/2026, AI hỗ trợ follow-up evidence task được người nghiên cứu phê duyệt sau khi đã xem V2: đo parameter-gradient và net checkpoint displacement từ 60 checkpoint có sẵn; ghép accuracy/loss với balanced-probe gradients; và chạy hai đối chứng D=12 đã đóng băng trước lượt chạy (Tanh Xavier gain=0.5, Sigmoid Xavier gain=1.0). Artifact được gắn nhãn follow-up, không thay thế V2, không được coi là preregistered V2 và không chứa kết luận khoa học thay người nghiên cứu.
+
+AI tiếp tục hỗ trợ phân tích mô tả RQ2 trên 90 checkpoint đã có, không training: ghép validation metrics, activation-gradient, per-probe gap và parameter-gradient; tái đo read-only các metric còn thiếu cho checkpoint follow-up; tạo biểu đồ theo từng seed và sensitivity analysis được gắn nhãn exploratory. AI không chọn ngưỡng confirmatory, không tuyên bố nhân quả và không viết nội dung báo cáo nộp.
+

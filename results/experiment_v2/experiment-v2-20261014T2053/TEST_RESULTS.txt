@@ -1,0 +1,11 @@
+Pre-run command:
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+Observed before protocol freeze and execution:
+16 tests passed, 0 failed, 0 errors.
+
+Coverage includes deterministic disjoint split, batch order, Tanh saturation definitions,
+gap aggregation distinction, per-sample CrossEntropy scaling, pre/post-Tanh and weight-gradient
+identities, Chain Rule, 10-logit Jacobian, finite differences, spectrum metrics, fixed probes,
+configuration guards, and the float64 instrumentation smoke test.
+

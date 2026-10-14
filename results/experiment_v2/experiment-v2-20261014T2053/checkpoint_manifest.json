@@ -1,0 +1,544 @@
+{
+  "checkpoints": [
+    {
+      "path": "primary_d3_seed_42_step_0.pt",
+      "bytes": 542285,
+      "sha256": "6243bdee205d32706140457715751c4aa0ed9423df2dc06ad1a992770212747c",
+      "arm_id": "primary_d3_seed_42",
+      "depth": 3,
+      "seed": 42,
+      "step": 0
+    },
+    {
+      "path": "primary_d3_seed_42_step_25.pt",
+      "bytes": 542285,
+      "sha256": "5a3814abda9808f716fbfa4c735e9a8e85bacc2c39eb2c08c5b6f548af1ed73c",
+      "arm_id": "primary_d3_seed_42",
+      "depth": 3,
+      "seed": 42,
+      "step": 25
+    },
+    {
+      "path": "primary_d3_seed_42_step_100.pt",
+      "bytes": 542285,
+      "sha256": "c88529ba7b03c85e7ac5fe4fa7b1b44e12d36c36079e9b39f1480459243a43c0",
+      "arm_id": "primary_d3_seed_42",
+      "depth": 3,
+      "seed": 42,
+      "step": 100
+    },
+    {
+      "path": "primary_d3_seed_42_step_300.pt",
+      "bytes": 542285,
+      "sha256": "48de34b5cbfe2da05c1cce069179a90f2accd3ff9e049f2061e0c6d0767551b4",
+      "arm_id": "primary_d3_seed_42",
+      "depth": 3,
+      "seed": 42,
+      "step": 300
+    },
+    {
+      "path": "primary_d3_seed_42_step_600.pt",
+      "bytes": 542285,
+      "sha256": "f4753f3d9f093914453a5880052db1499e3cad7407bf160c7fef3e4d8bffb852",
+      "arm_id": "primary_d3_seed_42",
+      "depth": 3,
+      "seed": 42,
+      "step": 600
+    },
+    {
+      "path": "primary_d3_seed_123_step_0.pt",
+      "bytes": 542285,
+      "sha256": "84b64f0213534653e9b1a94890945cd441a4d2942cf301ddd4e39af5d0d71472",
+      "arm_id": "primary_d3_seed_123",
+      "depth": 3,
+      "seed": 123,
+      "step": 0
+    },
+    {
+      "path": "primary_d3_seed_123_step_25.pt",
+      "bytes": 542285,
+      "sha256": "b27cc7411cde88b9faac24e849eb309503e85d60e95b0dd444ea97a52df5e7ec",
+      "arm_id": "primary_d3_seed_123",
+      "depth": 3,
+      "seed": 123,
+      "step": 25
+    },
+    {
+      "path": "primary_d3_seed_123_step_100.pt",
+      "bytes": 542285,
+      "sha256": "c9cbfb9ff0ea24aa3afab4c734d0e0ec70eac3a378d59b6b512c0cbc208e0b84",
+      "arm_id": "primary_d3_seed_123",
+      "depth": 3,
+      "seed": 123,
+      "step": 100
+    },
+    {
+      "path": "primary_d3_seed_123_step_300.pt",
+      "bytes": 542285,
+      "sha256": "9fcf6d94fdef54bf94bf79fc61c4283d7a0df4f9c6ebf4f430153b6e3a8e81e2",
+      "arm_id": "primary_d3_seed_123",
+      "depth": 3,
+      "seed": 123,
+      "step": 300
+    },
+    {
+      "path": "primary_d3_seed_123_step_600.pt",
+      "bytes": 542285,
+      "sha256": "f96d842f868ddee181844080f74a9d853c830348674aa5f533ae066c1c8a69bf",
+      "arm_id": "primary_d3_seed_123",
+      "depth": 3,
+      "seed": 123,
+      "step": 600
+    },
+    {
+      "path": "primary_d3_seed_2026_step_0.pt",
+      "bytes": 542285,
+      "sha256": "9202499a2565fc810c6597b9219bb28d83a29d5f65cc659ac8cb341528e7e4cf",
+      "arm_id": "primary_d3_seed_2026",
+      "depth": 3,
+      "seed": 2026,
+      "step": 0
+    },
+    {
+      "path": "primary_d3_seed_2026_step_25.pt",
+      "bytes": 542285,
+      "sha256": "bb57a81841e5f4c395e1b9c27891c4ded636f68df792e65eedb725d6bf5fff02",
+      "arm_id": "primary_d3_seed_2026",
+      "depth": 3,
+      "seed": 2026,
+      "step": 25
+    },
+    {
+      "path": "primary_d3_seed_2026_step_100.pt",
+      "bytes": 542285,
+      "sha256": "f64e77a9d16d70318dbedb16b69eefe7bbda7cc02b1d96d6d9952dcd8e5076d2",
+      "arm_id": "primary_d3_seed_2026",
+      "depth": 3,
+      "seed": 2026,
+      "step": 100
+    },
+    {
+      "path": "primary_d3_seed_2026_step_300.pt",
+      "bytes": 542285,
+      "sha256": "f3c90d411ed2f072200d0a9405c58a5ddc20a3e7df2b330c17923dd9e2815476",
+      "arm_id": "primary_d3_seed_2026",
+      "depth": 3,
+      "seed": 2026,
+      "step": 300
+    },
+    {
+      "path": "primary_d3_seed_2026_step_600.pt",
+      "bytes": 542285,
+      "sha256": "efe08abb71f295f7bae8e06234958f5b57abf8ceffa426d6f3a45b0eb925fca8",
+      "arm_id": "primary_d3_seed_2026",
+      "depth": 3,
+      "seed": 2026,
+      "step": 600
+    },
+    {
+      "path": "primary_d6_seed_42_step_0.pt",
+      "bytes": 741945,
+      "sha256": "e282d2e7ee86e668656c29c5ea9390c4b9f2d87e562982a0d96cac5b93c3de24",
+      "arm_id": "primary_d6_seed_42",
+      "depth": 6,
+      "seed": 42,
+      "step": 0
+    },
+    {
+      "path": "primary_d6_seed_42_step_25.pt",
+      "bytes": 741945,
+      "sha256": "5175be88f4ac18dd99df0153460858227c6aad7e1268878b49aace74760c267b",
+      "arm_id": "primary_d6_seed_42",
+      "depth": 6,
+      "seed": 42,
+      "step": 25
+    },
+    {
+      "path": "primary_d6_seed_42_step_100.pt",
+      "bytes": 741945,
+      "sha256": "f325ac84818b7fb5829d6cdaafbbcf9bbf7aa456fc1b85127c7fd4a707e63cc4",
+      "arm_id": "primary_d6_seed_42",
+      "depth": 6,
+      "seed": 42,
+      "step": 100
+    },
+    {
+      "path": "primary_d6_seed_42_step_300.pt",
+      "bytes": 741945,
+      "sha256": "3fdfb13e78cbb5d08efb4f6009dd7808eeae1baf53cff275b26fc795a40ea8b9",
+      "arm_id": "primary_d6_seed_42",
+      "depth": 6,
+      "seed": 42,
+      "step": 300
+    },
+    {
+      "path": "primary_d6_seed_42_step_600.pt",
+      "bytes": 741945,
+      "sha256": "0c678b50252c783810b3f71225714b2c6cb92c5cf88c986e90f8664f96de9e3b",
+      "arm_id": "primary_d6_seed_42",
+      "depth": 6,
+      "seed": 42,
+      "step": 600
+    },
+    {
+      "path": "primary_d6_seed_123_step_0.pt",
+      "bytes": 741945,
+      "sha256": "4c600969de3419bbf5ae174f38b6a31d12d3677ceb4aec647444b3d9480753d7",
+      "arm_id": "primary_d6_seed_123",
+      "depth": 6,
+      "seed": 123,
+      "step": 0
+    },
+    {
+      "path": "primary_d6_seed_123_step_25.pt",
+      "bytes": 741945,
+      "sha256": "0b8373197d49dc2d4daf91ac88edf74b93a63c81e61f7df25e09e912efb3faac",
+      "arm_id": "primary_d6_seed_123",
+      "depth": 6,
+      "seed": 123,
+      "step": 25
+    },
+    {
+      "path": "primary_d6_seed_123_step_100.pt",
+      "bytes": 741945,
+      "sha256": "04e720e37b7dd16f358c93a5ddf87a5911323e08e3165d007c31e8479eeee953",
+      "arm_id": "primary_d6_seed_123",
+      "depth": 6,
+      "seed": 123,
+      "step": 100
+    },
+    {
+      "path": "primary_d6_seed_123_step_300.pt",
+      "bytes": 741945,
+      "sha256": "a4349e631bf3f1e88e9d690614edc3dbdf44bec1870f273ecf2d6d6b49f86340",
+      "arm_id": "primary_d6_seed_123",
+      "depth": 6,
+      "seed": 123,
+      "step": 300
+    },
+    {
+      "path": "primary_d6_seed_123_step_600.pt",
+      "bytes": 741945,
+      "sha256": "77a42ab87fa62f9a2278cad61c47a4be3399bbf0dcad8092aae44c5f8c06b807",
+      "arm_id": "primary_d6_seed_123",
+      "depth": 6,
+      "seed": 123,
+      "step": 600
+    },
+    {
+      "path": "primary_d6_seed_2026_step_0.pt",
+      "bytes": 741945,
+      "sha256": "43331476c16fc6ec29fc0570742d73c1eed91cd6e847523e019d39565a810565",
+      "arm_id": "primary_d6_seed_2026",
+      "depth": 6,
+      "seed": 2026,
+      "step": 0
+    },
+    {
+      "path": "primary_d6_seed_2026_step_25.pt",
+      "bytes": 741945,
+      "sha256": "fdb9cab0283305b2baa3f97119cbed79395cdb61f43eead77d64e6d6f3a50b6e",
+      "arm_id": "primary_d6_seed_2026",
+      "depth": 6,
+      "seed": 2026,
+      "step": 25
+    },
+    {
+      "path": "primary_d6_seed_2026_step_100.pt",
+      "bytes": 741945,
+      "sha256": "a0cca72dbc50bd90caec1539024549aafdd4b6c4505ae9dd5dff12eb0a889f42",
+      "arm_id": "primary_d6_seed_2026",
+      "depth": 6,
+      "seed": 2026,
+      "step": 100
+    },
+    {
+      "path": "primary_d6_seed_2026_step_300.pt",
+      "bytes": 741945,
+      "sha256": "00d447a70aac0488697a363c8a15179860cd225808b7d867f9c3b55faf074959",
+      "arm_id": "primary_d6_seed_2026",
+      "depth": 6,
+      "seed": 2026,
+      "step": 300
+    },
+    {
+      "path": "primary_d6_seed_2026_step_600.pt",
+      "bytes": 741945,
+      "sha256": "074a078af5d787ee2bf6782cc2da76fc06a60923b91dd5bae89bed4749af59f8",
+      "arm_id": "primary_d6_seed_2026",
+      "depth": 6,
+      "seed": 2026,
+      "step": 600
+    },
+    {
+      "path": "primary_d12_seed_42_step_0.pt",
+      "bytes": 1141525,
+      "sha256": "eac4ba3d6d73ad87d3a2aa73ec725e47c995e5fe40dc91d60fb15e2e24c48674",
+      "arm_id": "primary_d12_seed_42",
+      "depth": 12,
+      "seed": 42,
+      "step": 0
+    },
+    {
+      "path": "primary_d12_seed_42_step_25.pt",
+      "bytes": 1141525,
+      "sha256": "5c67b164df6d4445f54a9081af49296cd35bfaeef99fc7e7199f9f84c7c19882",
+      "arm_id": "primary_d12_seed_42",
+      "depth": 12,
+      "seed": 42,
+      "step": 25
+    },
+    {
+      "path": "primary_d12_seed_42_step_100.pt",
+      "bytes": 1141525,
+      "sha256": "2170572738712d75c1310a6d29aaae7b0fb602f3fc378ea2256a9332fb76bfc9",
+      "arm_id": "primary_d12_seed_42",
+      "depth": 12,
+      "seed": 42,
+      "step": 100
+    },
+    {
+      "path": "primary_d12_seed_42_step_300.pt",
+      "bytes": 1141525,
+      "sha256": "b417b889347e61294a9ec9dca8355eef9d45ccee3011596c5b9f93a464c4dd39",
+      "arm_id": "primary_d12_seed_42",
+      "depth": 12,
+      "seed": 42,
+      "step": 300
+    },
+    {
+      "path": "primary_d12_seed_42_step_600.pt",
+      "bytes": 1141525,
+      "sha256": "42820abaf1fd5c139efd50c4193e8e9ff4414941becea982ed69769c44c260be",
+      "arm_id": "primary_d12_seed_42",
+      "depth": 12,
+      "seed": 42,
+      "step": 600
+    },
+    {
+      "path": "primary_d12_seed_123_step_0.pt",
+      "bytes": 1141525,
+      "sha256": "62150e961ec083431a702191b3fb65814b6dbc89ed706066e83df8d4e9a59c9f",
+      "arm_id": "primary_d12_seed_123",
+      "depth": 12,
+      "seed": 123,
+      "step": 0
+    },
+    {
+      "path": "primary_d12_seed_123_step_25.pt",
+      "bytes": 1141525,
+      "sha256": "5c6632f1d3abc4d6fd9bee21a46d2dc3ae3c2ac4cf368f507f23c290fdbf0b5b",
+      "arm_id": "primary_d12_seed_123",
+      "depth": 12,
+      "seed": 123,
+      "step": 25
+    },
+    {
+      "path": "primary_d12_seed_123_step_100.pt",
+      "bytes": 1141525,
+      "sha256": "e1ddd463fdfe3c84de6c1e69ad0d305d62179efad972c815bc1af733aa801022",
+      "arm_id": "primary_d12_seed_123",
+      "depth": 12,
+      "seed": 123,
+      "step": 100
+    },
+    {
+      "path": "primary_d12_seed_123_step_300.pt",
+      "bytes": 1141525,
+      "sha256": "b2b089e4215c99931fdf5eaa8acc1bac170a839d5552b1f3eba9c7d7e4d9c477",
+      "arm_id": "primary_d12_seed_123",
+      "depth": 12,
+      "seed": 123,
+      "step": 300
+    },
+    {
+      "path": "primary_d12_seed_123_step_600.pt",
+      "bytes": 1141525,
+      "sha256": "0112344625623f9c5cf2bd992aa8f0bc6e40b9fdf900383ded9402ef0a4f9963",
+      "arm_id": "primary_d12_seed_123",
+      "depth": 12,
+      "seed": 123,
+      "step": 600
+    },
+    {
+      "path": "primary_d12_seed_2026_step_0.pt",
+      "bytes": 1141525,
+      "sha256": "82fae5f8d389f0f3428071dda40288cde743875edd88db340b6ff85134c69145",
+      "arm_id": "primary_d12_seed_2026",
+      "depth": 12,
+      "seed": 2026,
+      "step": 0
+    },
+    {
+      "path": "primary_d12_seed_2026_step_25.pt",
+      "bytes": 1141525,
+      "sha256": "c336655166d7e23537a6c9afb4ca4b75b6089ee9615b72d6fe02df6cbf3d1c96",
+      "arm_id": "primary_d12_seed_2026",
+      "depth": 12,
+      "seed": 2026,
+      "step": 25
+    },
+    {
+      "path": "primary_d12_seed_2026_step_100.pt",
+      "bytes": 1141525,
+      "sha256": "2e0824ea79caaa00cbfc74c56306bc58618481cc496dc1974dbd5f36f06eaf6e",
+      "arm_id": "primary_d12_seed_2026",
+      "depth": 12,
+      "seed": 2026,
+      "step": 100
+    },
+    {
+      "path": "primary_d12_seed_2026_step_300.pt",
+      "bytes": 1141525,
+      "sha256": "8cb345fcf139df025a4ae371fdb75c56a14c117eb03e48c80ac3f414ae04eba9",
+      "arm_id": "primary_d12_seed_2026",
+      "depth": 12,
+      "seed": 2026,
+      "step": 300
+    },
+    {
+      "path": "primary_d12_seed_2026_step_600.pt",
+      "bytes": 1141525,
+      "sha256": "80aa8de36abdb9a37b1d297854aed9a3e359749188e461df9250cc437ca977ff",
+      "arm_id": "primary_d12_seed_2026",
+      "depth": 12,
+      "seed": 2026,
+      "step": 600
+    },
+    {
+      "path": "primary_d24_seed_42_step_0.pt",
+      "bytes": 1941389,
+      "sha256": "4796441cea2fcc6811708f23ced0a6fee9cc16369a60bebf40471c4da9b4703a",
+      "arm_id": "primary_d24_seed_42",
+      "depth": 24,
+      "seed": 42,
+      "step": 0
+    },
+    {
+      "path": "primary_d24_seed_42_step_25.pt",
+      "bytes": 1941389,
+      "sha256": "10ec957934159573fb9d3a9fa1c53acff603669068353e1f9863286e811d4037",
+      "arm_id": "primary_d24_seed_42",
+      "depth": 24,
+      "seed": 42,
+      "step": 25
+    },
+    {
+      "path": "primary_d24_seed_42_step_100.pt",
+      "bytes": 1941389,
+      "sha256": "28dbe30ed319bc1bb4ee8a1cfe2316b24c94c005e8d92c85e1a8e36aad57e2dc",
+      "arm_id": "primary_d24_seed_42",
+      "depth": 24,
+      "seed": 42,
+      "step": 100
+    },
+    {
+      "path": "primary_d24_seed_42_step_300.pt",
+      "bytes": 1941389,
+      "sha256": "644a6ff78d6691df8588755192f0bf0bee0d44dd14f5ea092bce83967df45bbd",
+      "arm_id": "primary_d24_seed_42",
+      "depth": 24,
+      "seed": 42,
+      "step": 300
+    },
+    {
+      "path": "primary_d24_seed_42_step_600.pt",
+      "bytes": 1941389,
+      "sha256": "aec3f880671f1cc509fc42b44692be879a806c92044ae2b570834c0643da4e88",
+      "arm_id": "primary_d24_seed_42",
+      "depth": 24,
+      "seed": 42,
+      "step": 600
+    },
+    {
+      "path": "primary_d24_seed_123_step_0.pt",
+      "bytes": 1941389,
+      "sha256": "5a7884d106259c83504e160501f4b48a3c25ef7df6baea867b012a72a2b4ef6a",
+      "arm_id": "primary_d24_seed_123",
+      "depth": 24,
+      "seed": 123,
+      "step": 0
+    },
+    {
+      "path": "primary_d24_seed_123_step_25.pt",
+      "bytes": 1941389,
+      "sha256": "524c4a9b9f08e2ddcd375c04aec9f168b21b9018d2bd036f5fb4be809f64d9de",
+      "arm_id": "primary_d24_seed_123",
+      "depth": 24,
+      "seed": 123,
+      "step": 25
+    },
+    {
+      "path": "primary_d24_seed_123_step_100.pt",
+      "bytes": 1941389,
+      "sha256": "488eba759782a9b5a490b52124b1573c905491949f767a208559a9caa9de3480",
+      "arm_id": "primary_d24_seed_123",
+      "depth": 24,
+      "seed": 123,
+      "step": 100
+    },
+    {
+      "path": "primary_d24_seed_123_step_300.pt",
+      "bytes": 1941389,
+      "sha256": "8ff0d69e313b89a6426a1b7ec6bcb5f51ba0ed703496b96eb92bbe7d5ce2fa72",
+      "arm_id": "primary_d24_seed_123",
+      "depth": 24,
+      "seed": 123,
+      "step": 300
+    },
+    {
+      "path": "primary_d24_seed_123_step_600.pt",
+      "bytes": 1941389,
+      "sha256": "02c558cdda51b205f7cbae5f8d167297b990eb96118ecc345acd740afe1e7254",
+      "arm_id": "primary_d24_seed_123",
+      "depth": 24,
+      "seed": 123,
+      "step": 600
+    },
+    {
+      "path": "primary_d24_seed_2026_step_0.pt",
+      "bytes": 1941389,
+      "sha256": "89802303f5889591f327d346e49d10a8871b19e585faee4ca832924d2ed408dc",
+      "arm_id": "primary_d24_seed_2026",
+      "depth": 24,
+      "seed": 2026,
+      "step": 0
+    },
+    {
+      "path": "primary_d24_seed_2026_step_25.pt",
+      "bytes": 1941389,
+      "sha256": "c6c852852acde1f44e087ea375a4a8bcef2bed230b19fba0106cd808344da6e5",
+      "arm_id": "primary_d24_seed_2026",
+      "depth": 24,
+      "seed": 2026,
+      "step": 25
+    },
+    {
+      "path": "primary_d24_seed_2026_step_100.pt",
+      "bytes": 1941389,
+      "sha256": "357a8f007a95ff6566d8b6abd44dcfe99522ceaaeb6816c1b3fe53b324f8e641",
+      "arm_id": "primary_d24_seed_2026",
+      "depth": 24,
+      "seed": 2026,
+      "step": 100
+    },
+    {
+      "path": "primary_d24_seed_2026_step_300.pt",
+      "bytes": 1941389,
+      "sha256": "fb54740496c6344a0ee58db32a6f2e49835230423756e1e44ecbb050260d6f2d",
+      "arm_id": "primary_d24_seed_2026",
+      "depth": 24,
+      "seed": 2026,
+      "step": 300
+    },
+    {
+      "path": "primary_d24_seed_2026_step_600.pt",
+      "bytes": 1941389,
+      "sha256": "4588413459a72a6d0c26a33dafc18a744669ac52f4da12cd5e3a08630ad83c76",
+      "arm_id": "primary_d24_seed_2026",
+      "depth": 24,
+      "seed": 2026,
+      "step": 600
+    }
+  ]
+}

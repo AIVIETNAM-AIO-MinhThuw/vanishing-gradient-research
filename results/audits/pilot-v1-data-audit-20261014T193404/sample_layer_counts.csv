@@ -1,0 +1,13 @@
+arm_id,depth,seed,step,probe_samples,pre_layers_per_probe,post_layers_per_probe
+primary_d3,3,42,0,16,3,3
+primary_d3,3,42,100,16,3,3
+primary_d12,12,42,0,16,12,12
+primary_d12,12,42,100,16,12,12
+primary_d3,3,123,0,16,3,3
+primary_d3,3,123,100,16,3,3
+primary_d12,12,123,0,16,12,12
+primary_d12,12,123,100,16,12,12
+primary_d3,3,2026,0,16,3,3
+primary_d3,3,2026,100,16,3,3
+primary_d12,12,2026,0,16,12,12
+primary_d12,12,2026,100,16,12,12

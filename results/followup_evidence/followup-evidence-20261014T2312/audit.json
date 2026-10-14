@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_artifacts_unchanged": true,
+  "source_checkpoint_count": 60,
+  "parameter_gradient_checkpoint_count": 60,
+  "parameter_gradient_row_count": 735,
+  "parameter_displacement_row_count": 588,
+  "combined_row_count": 60,
+  "followup_run_count": 6,
+  "followup_checkpoint_count": 30,
+  "nonfinite_count": 0,
+  "near_zero_parameter_denominator_exclusion_count": 0,
+  "near_zero_displacement_denominator_exclusion_count": 0,
+  "official_test_used": false,
+  "runtime_seconds": 53.47605619998649
+}

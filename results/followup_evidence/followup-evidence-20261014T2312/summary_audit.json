@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source": "raw_results.json",
+  "parameter_summary_rows": 245,
+  "displacement_summary_rows": 196,
+  "combined_summary_rows": 20,
+  "condition_summary_rows": 10,
+  "baseline_comparison_rows": 10,
+  "aggregation": "arithmetic mean across the three approved seeds; no threshold or significance test"
+}

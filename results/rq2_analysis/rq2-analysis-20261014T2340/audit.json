@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "verdict": "OBSERVED_DESCRIPTIVELY",
+  "runtime_seconds": 4.7715938000474125,
+  "source_artifacts_unchanged": true,
+  "checkpoint_rows": 90,
+  "per_probe_rows": 3600,
+  "v2_checkpoint_rows": 60,
+  "followup_checkpoint_rows": 30,
+  "nonfinite_count": 0,
+  "source_sha256": {
+    "D:\\LT\\AIO\\2026\\Chính\\Module 4\\Vanishing Gradient\\vanishing-gradient-research\\results\\experiment_v2\\experiment-v2-20261014T2053\\raw_results.json": "1bbc7052c013e79314ebc0fe5048166021a7bee6532259bad5f46cfebd9bfe68",
+    "D:\\LT\\AIO\\2026\\Chính\\Module 4\\Vanishing Gradient\\vanishing-gradient-research\\results\\experiment_v2\\posthoc-balanced-probes-20261014T2125\\raw_posthoc_results.json": "21a4f18df491e7d96548e74e33b396f8e02b12e791714330f6667a02cfa2c3a4",
+    "D:\\LT\\AIO\\2026\\Chính\\Module 4\\Vanishing Gradient\\vanishing-gradient-research\\results\\followup_evidence\\followup-evidence-20261014T2312\\raw_results.json": "0b86a5335678e1a5f2770aaa9aff267a6ee08f2859a2a2e536b74e25b238e0da"
+  },
+  "threshold_policy": "gap sign is definitional; all absolute/accuracy thresholds are exploratory sensitivity only"
+}

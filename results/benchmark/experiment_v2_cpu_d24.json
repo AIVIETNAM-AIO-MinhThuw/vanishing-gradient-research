@@ -1,0 +1,12 @@
+{
+  "benchmark": "experiment_v2_cpu_d24",
+  "training_steps": 10,
+  "setup_seconds": 1.0819850000552833,
+  "training_10_steps_seconds": 0.06408509984612465,
+  "one_checkpoint_measurement_seconds": 0.2992732001002878,
+  "one_8_probe_3_layer_jacobian_snapshot_seconds": 0.1453100999351591,
+  "estimated_primary_seconds_d24_upper_bound": 65.1796488952823,
+  "estimated_conditional_jacobian_seconds_d24_upper_bound": 3.9233726982492954,
+  "estimated_total_with_20_percent_margin_seconds": 82.92362591223791,
+  "approved_budget_seconds": 1200
+}

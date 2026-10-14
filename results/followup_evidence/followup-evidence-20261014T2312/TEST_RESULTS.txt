@@ -1,0 +1,10 @@
+Commands:
+.venv\Scripts\python.exe -m unittest tests.test_followup_evidence -v
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+Observed after implementation and execution on 2026-10-14:
+- Focused follow-up tests: 4 passed, 0 failed, 0 errors.
+- Full project suite: 24 passed, 0 failed, 0 errors.
+
+Coverage added for near-zero relative-norm handling, one-step update formula,
+endpoint checkpoint displacement, and unweighted arithmetic aggregation across seeds.

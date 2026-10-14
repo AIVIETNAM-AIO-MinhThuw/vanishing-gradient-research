@@ -1,0 +1,8 @@
+Pilot-recorded code revision:
+103578f996449c9d58a5bac00e274ba6ff8864f6
+
+Repository HEAD at audit/package preparation:
+52d6e37 Record approved pilot execution provenance
+
+The audit utility and audit package were created after the measured pilot and were not part of the pilot-recorded revision.
+

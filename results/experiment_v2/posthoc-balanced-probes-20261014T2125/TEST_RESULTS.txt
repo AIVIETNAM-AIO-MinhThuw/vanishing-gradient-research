@@ -1,0 +1,11 @@
+Command:
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+Observed after the post-hoc measurement:
+20 tests passed, 0 failed, 0 errors.
+
+New coverage includes balanced 4/2-per-label selection, no training-subset overlap,
+Jacobian subset membership, exactly 60 source checkpoint specifications, eval-only
+checkpoint loading, common probe indices across every model/checkpoint, no training
+code path, source-artifact preservation, and independent formula verification.
+

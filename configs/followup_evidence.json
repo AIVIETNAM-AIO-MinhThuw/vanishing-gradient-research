@@ -1,0 +1,19 @@
+{
+  "protocol": "experiments/followup_evidence_protocol.json",
+  "source_v2_run": "results/experiment_v2/experiment-v2-20261014T2053",
+  "source_posthoc_run": "results/experiment_v2/posthoc-balanced-probes-20261014T2125",
+  "data_root": "data",
+  "results_root": "results/followup_evidence",
+  "device": "cpu",
+  "runtime_budget_seconds": 600,
+  "denominator_threshold": 1e-12,
+  "learning_rate": 0.01,
+  "batch_size": 64,
+  "evaluation_batch_size": 256,
+  "checkpoints": [0, 25, 100, 300, 600],
+  "seeds": [42, 123, 2026],
+  "followup_arms": [
+    {"arm_id": "followup_d12_tanh_gain_0_5", "activation": "tanh", "xavier_gain": 0.5},
+    {"arm_id": "followup_d12_sigmoid_gain_1_0", "activation": "sigmoid", "xavier_gain": 1.0}
+  ]
+}

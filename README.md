@@ -1,64 +1,97 @@
-# vanishing-gradient-research
+# Vanishing Gradient Research — AIO2026
 
-Khung tối thiểu cho nghiên cứu cơ chế vanishing gradient trong deep neural networks bằng PyTorch.
+Thực nghiệm PyTorch khảo sát gradient propagation trong plain MLP trên Fashion-MNIST. Repository công bố code, protocol, test và các bảng/biểu đồ nhỏ có thể kiểm tra trực tiếp. Raw artifacts và model checkpoints được tách khỏi Git; xem [ARTIFACTS.md](ARTIFACTS.md).
 
-## Phạm vi hiện tại
+Repository không đưa ra kết luận khoa học thay người nghiên cứu. Các kết quả dưới đây là mô tả provenance và phạm vi đo đã hoàn thành.
 
-Repository này **chỉ** chứa thiết lập ban đầu và một instrumentation smoke test. Smoke test kiểm tra đường đi tính toán và phép đo; kết quả của nó không phải bằng chứng khoa học về vanishing gradient. Verdict hiện tại là **PILOT ONLY**. Không triển khai Phase 1 hoặc full experiment nếu chưa có phê duyệt của người nghiên cứu.
+## Năm giai đoạn
+
+1. **Pilot V1:** feasibility pilot D=3 so với D=12, ba seed, tối đa 100 bước; diagnostic gain=0.5 và Jacobian là supplementary.
+2. **Main Experiment V2:** primary experiment với D=3, 6, 12, 24; width 128; Tanh; Xavier gain=1.0; ba seed; 600 bước; tổng 12 runs và 60 checkpoints.
+3. **Post-hoc Balanced Probes:** phép đo exploratory trên 60 V2 checkpoints đã lưu, dùng 40 gradient probes cân bằng nhãn và 20 Jacobian probes; không training lại và không thay thế V2 gốc.
+4. **Follow-up Evidence:** follow-up được thiết kế sau khi xem V2. Phần A/B tái sử dụng 60 V2 checkpoints; phần C chạy 6 runs/30 checkpoints cho hai đối chứng D=12. Đây không phải preregistered V2 evidence.
+5. **RQ2 Exploratory Analysis:** phân tích mô tả 90 checkpoint-level rows và 3.600 per-probe rows. Verdict artifact là `OBSERVED_DESCRIPTIVELY`; đây là kết quả exploratory/descriptive, không phải confirmatory hay causal claim.
 
 ## Cấu trúc
 
 ```text
-configs/       cấu hình JSON có thể dùng trên CPU hoặc CUDA
-experiments/   chỉ dẫn phạm vi; chưa có full experiment
-results/       artifact JSON sinh từ lần chạy thật
-src/           model và instrumentation smoke test
-tests/         kiểm tra tự động bằng unittest
+.agents/skills/research-agent/  skill hỗ trợ quy trình, kèm LICENSE và SOURCE.md
+configs/                       cấu hình thực thi
+experiments/                   protocol và phân loại từng giai đoạn
+scripts/                       benchmark, measurement, audit và analysis entry points
+src/vanishing_gradient/        implementation smoke test, Pilot V1 và V2
+tests/                         unittest; một số test cần external artifacts
+results/                       canonical summaries, audit metadata và local raw artifacts
+ARTIFACTS.md                   bản đồ Git / Release / local-only
+AI_ASSISTANCE.md               disclosure phần việc có AI hỗ trợ
 ```
 
-## Cài đặt local
+## Môi trường
 
-Yêu cầu Python 3.10+.
+Yêu cầu Python 3.10+; môi trường đã ghi trong các artifact mới nhất dùng Python 3.11.9.
 
 ```powershell
 python -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip
 .venv\Scripts\python -m pip install -r requirements.txt
 ```
 
-## Chạy lại
+Dependencies được pin trong `requirements.txt`: PyTorch và torchvision. Fashion-MNIST được tải vào `data/` và không được đưa vào Git.
+
+## Entry points
+
+Các lệnh dưới đây tạo run ID/output mới; không dùng chúng để ghi đè canonical artifacts.
 
 ```powershell
-.venv\Scripts\python src\vanishing_gradient\smoke_test.py --config configs\smoke_test.json --output results\smoke_test.json
+# Instrumentation smoke test
+.venv\Scripts\python src\vanishing_gradient\smoke_test.py `
+  --config configs\smoke_test.json `
+  --output results\smoke_test.json
+
+# Pilot V1
+.venv\Scripts\python src\vanishing_gradient\pilot.py `
+  --config configs\pilot_v1.json `
+  --run-id pilot-v1-NEW-UNIQUE-ID
+
+# Main Experiment V2
+.venv\Scripts\python src\vanishing_gradient\experiment_v2.py `
+  --config configs\experiment_v2.json `
+  --run-id experiment-v2-NEW-UNIQUE-ID
+
+# Balanced-probe measurement; yêu cầu 60 V2 checkpoints
+.venv\Scripts\python scripts\measure_balanced_probes_v2.py `
+  --source-run results\experiment_v2\experiment-v2-20261014T2053 `
+  --protocol experiments\posthoc_balanced_probe_protocol_v2.json `
+  --output-dir results\experiment_v2\posthoc-balanced-probes-NEW-UNIQUE-ID
+
+# Follow-up; yêu cầu V2 và balanced post-hoc artifacts tại paths trong config
+.venv\Scripts\python scripts\followup_evidence.py `
+  --config configs\followup_evidence.json `
+  --run-id followup-evidence-NEW-UNIQUE-ID
+
+# RQ2 analysis; không training nhưng cần ba source artifact và follow-up weights
+.venv\Scripts\python scripts\analyze_rq2.py `
+  --v2-dir results\experiment_v2\experiment-v2-20261014T2053 `
+  --posthoc-dir results\experiment_v2\posthoc-balanced-probes-20261014T2125 `
+  --followup-dir results\followup_evidence\followup-evidence-20261014T2312 `
+  --output-dir results\rq2_analysis\rq2-analysis-NEW-UNIQUE-ID
+```
+
+Chi tiết input bắt buộc và lệnh tái lập nằm trong `REPRODUCE.md` của từng canonical run. Các bước cần checkpoints/raw data chỉ chạy được sau khi phục hồi đúng Release assets theo [ARTIFACTS.md](ARTIFACTS.md).
+
+## Tests
+
+```powershell
 .venv\Scripts\python -m unittest discover -s tests -v
 ```
 
-Lệnh smoke test trả exit code khác 0 nếu có phép kiểm tra thất bại. Artifact `results/smoke_test.json` lưu cấu hình, môi trường, tensor shape, gradient theo hidden activation, gradient theo weight, Jacobian, singular values, numerical rank, sai số chain rule, sai số finite differences, runtime và lỗi (nếu có).
+Unit tests thuần có thể chạy từ clean clone sau khi cài dependencies. Một số integration tests, đặc biệt balanced-probe measurement, phụ thuộc V2 artifacts/checkpoints không lưu trong Git. Test records đi kèm từng run là bằng chứng lịch sử; chúng không thay thế việc chạy lại trên clean clone.
 
-## Chuyển sang Kaggle GPU T4
+## Provenance và diễn giải
 
-Logic model và instrumentation không phụ thuộc thiết bị. Trên Kaggle, upload repository hoặc notebook dataset, dùng PyTorch có sẵn, rồi chạy:
+- V2 là main experiment. Post-hoc balanced probes, Follow-up và RQ2 phải luôn giữ nhãn riêng; chúng không được trình bày như đã đăng ký trước cùng V2.
+- Source/config/protocol local của Follow-up và source RQ2 khớp byte-for-byte với snapshot tương ứng trong handoff ZIP.
+- Follow-up/RQ2 scripts chưa nằm trong commit được ghi tại thời điểm chạy. Commit Git tiếp theo chỉ bảo toàn hậu nghiệm các snapshot đã xác minh, không tạo ra preregistration hoặc provenance ngược thời gian.
+- Condition number, gradient gap và accuracy là các phép đo khác nhau; repository không tự chuyển chúng thành causal claim hay research-gap claim.
 
-```bash
-python src/vanishing_gradient/smoke_test.py \
-  --config configs/smoke_test.json \
-  --device cuda \
-  --output results/smoke_test-kaggle.json
-```
-
-Không cần đổi code chính. `--device auto` cũng chọn CUDA khi có và CPU khi không có. Trước một pilot được phê duyệt, cần lưu phiên bản PyTorch/CUDA, loại GPU, seed và artifact đầu ra của chính lần chạy đó.
-
-## Tự kiểm tra phép đo
-
-- `activation_gradient`: \(\partial L / \partial h\), gradient của loss theo activation tại hidden layer được chọn; shape là `[batch_size, hidden_width]`.
-- `weight_gradient`: \(\partial L / \partial W\), gradient theo tham số của linear layer sinh ra activation đó; shape là `[hidden_width, previous_width]`. Hai đại lượng không thay thế cho nhau.
-- `jacobian`: \(J = \partial z / \partial h\) từ activation của một sample đến logits của sample đó; shape là `[output_dim, hidden_width]`.
-- Chain rule được kiểm tra bằng `direct dL/dh` so với `J.T @ dL/dz`.
-- Một số phần tử của Jacobian được đối chiếu bằng central finite differences trong float64.
-- Singular values và numerical rank chỉ là chẩn đoán instrumentation của mạng ngẫu nhiên nhỏ, không được diễn giải thành kết luận nghiên cứu.
-
-## Nguồn tham khảo quy trình
-
-Quy trình được tham khảo có chọn lọc từ [Academic-Research-Agent-Skill](https://github.com/ngtiendong/Academic-Research-Agent-Skill): smoke test phải có seed, môi trường, runtime, artifact có cấu trúc và phải tách khỏi bằng chứng khoa học. Repository tham khảo không được clone hoặc chép toàn bộ vào project này.
-
-Xem [AI_ASSISTANCE.md](AI_ASSISTANCE.md) để biết phần việc có AI hỗ trợ.
-
+Xem [AI_ASSISTANCE.md](AI_ASSISTANCE.md) để biết phạm vi AI hỗ trợ. Skill quy trình được giữ nguyên tại `.agents/skills/research-agent/` cùng license và nguồn gốc upstream.

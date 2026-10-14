@@ -1,0 +1,11 @@
+{
+  "source_run_id": "experiment-v2-20261014T2053",
+  "original_gradient_probe_count": 16,
+  "original_gradient_label_histogram": {"0": 16, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0},
+  "original_raw_gradient_probe_rows": 960,
+  "original_raw_gradient_target_histogram": {"0": 960, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0},
+  "original_jacobian_probe_count_per_snapshot": 8,
+  "original_jacobian_label_histogram": {"0": 8, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0},
+  "mechanism": "Class-contiguous validation indices followed by prefix selection.",
+  "source_data_modified": false
+}

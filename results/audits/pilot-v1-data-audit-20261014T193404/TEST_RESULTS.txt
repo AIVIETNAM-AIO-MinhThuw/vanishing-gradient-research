@@ -1,0 +1,20 @@
+Command:
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+Observed at audit time 2026-10-14:
+
+test_chain_rule_and_jacobian_for_ten_logits ... ok
+test_diagnostic_gain_changes_only_initialization_scale ... ok
+test_directional_gain_and_near_zero_exclusion ... ok
+test_fixed_probe_measurement_is_reproducible ... ok
+test_frozen_config_requires_approved_runtime_budget ... ok
+test_gradient_gap_normalization_and_slope_are_distinct ... ok
+test_per_sample_cross_entropy_matches_batch_mean_scaling ... ok
+test_pre_post_tanh_and_weight_gradient_identities ... ok
+test_spectrum_separates_scale_rank_and_condition ... ok
+test_stratified_indices_are_deterministic_and_balanced ... ok
+test_cpu_float64_instrumentation ... ok
+
+Ran 11 tests in 0.043s
+OK
+
