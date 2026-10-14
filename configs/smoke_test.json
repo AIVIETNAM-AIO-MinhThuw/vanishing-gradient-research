@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float64",
+  "batch_size": 4,
+  "input_dim": 16,
+  "hidden_width": 16,
+  "hidden_layers": 3,
+  "output_dim": 3,
+  "activation": "tanh",
+  "hidden_layer_index": 1,
+  "sample_index": 0,
+  "finite_difference_epsilon": 1e-06,
+  "finite_difference_checks": 8,
+  "chain_rule_rtol": 1e-10,
+  "chain_rule_atol": 1e-12,
+  "finite_difference_rtol": 1e-05,
+  "finite_difference_atol": 1e-08
+}
+

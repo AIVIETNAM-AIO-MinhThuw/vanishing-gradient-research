@@ -1,0 +1,177 @@
+{
+  "artifact_type": "engineering_instrumentation_smoke_test",
+  "scientific_evidence": false,
+  "phase": "setup_only",
+  "verdict_scope": "PILOT ONLY",
+  "timestamp_utc": "2026-10-14T11:08:05.444821+00:00",
+  "config": {
+    "seed": 42,
+    "device": "cpu",
+    "dtype": "float64",
+    "batch_size": 4,
+    "input_dim": 16,
+    "hidden_width": 16,
+    "hidden_layers": 3,
+    "output_dim": 3,
+    "activation": "tanh",
+    "hidden_layer_index": 1,
+    "sample_index": 0,
+    "finite_difference_epsilon": 1e-06,
+    "finite_difference_checks": 8,
+    "chain_rule_rtol": 1e-10,
+    "chain_rule_atol": 1e-12,
+    "finite_difference_rtol": 1e-05,
+    "finite_difference_atol": 1e-08
+  },
+  "environment": {
+    "python": "3.11.9",
+    "pytorch": "2.14.1+cpu",
+    "device": "cpu",
+    "device_name": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cuda_available": false,
+    "cuda_version": null
+  },
+  "measurements": {
+    "loss": 0.6084704442176022,
+    "activation_gradient": {
+      "definition": "d(loss)/d(hidden activation)",
+      "shape": [
+        4,
+        16
+      ],
+      "l2_norm": 0.09855433497856307
+    },
+    "weight_gradient": {
+      "definition": "d(loss)/d(weight producing the selected hidden activation)",
+      "shape": [
+        16,
+        16
+      ],
+      "l2_norm": 0.15288411320648415
+    },
+    "jacobian": {
+      "definition": "d(sample logits)/d(sample hidden activation)",
+      "shape": [
+        3,
+        16
+      ],
+      "singular_values": [
+        0.3371542833642251,
+        0.2639086568456065,
+        0.17754165148291942
+      ],
+      "rank_tolerance": 1.1978126343742627e-15,
+      "numerical_rank": 3
+    },
+    "chain_rule": {
+      "rtol": 1e-10,
+      "atol": 1e-12,
+      "max_absolute_error": 6.938893903907228e-18,
+      "relative_l2_error": 2.7856137224139757e-16,
+      "pass": true
+    },
+    "finite_difference": {
+      "epsilon": 1e-06,
+      "rtol": 1e-05,
+      "atol": 1e-08,
+      "elements": [
+        {
+          "output_index": 2,
+          "hidden_index": 12,
+          "autograd": 0.00461106104710398,
+          "finite_difference": 0.0046110610607552616,
+          "absolute_error": 1.3651281494109213e-11,
+          "relative_error": 2.960551012931766e-09,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 6,
+          "autograd": 0.04875124704159208,
+          "finite_difference": 0.04875124703929146,
+          "absolute_error": 2.300624968309961e-12,
+          "relative_error": 4.719109987785923e-11,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 13,
+          "autograd": -0.002799511051195358,
+          "finite_difference": -0.0027995110396528133,
+          "absolute_error": 1.1542544697817902e-11,
+          "relative_error": 4.123057379212478e-09,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 2,
+          "autograd": -0.138404370166897,
+          "finite_difference": -0.13840437018686202,
+          "absolute_error": 1.9965029629531728e-11,
+          "relative_error": 1.442514394782232e-10,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 7,
+          "autograd": -0.1233841581678421,
+          "finite_difference": -0.12338415816826043,
+          "absolute_error": 4.18332035678759e-13,
+          "relative_error": 3.390484174704784e-12,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 4,
+          "autograd": 0.02528122339327367,
+          "finite_difference": 0.025281223392514818,
+          "absolute_error": 7.588513151191023e-13,
+          "relative_error": 3.001640004973029e-11,
+          "pass": true
+        },
+        {
+          "output_index": 1,
+          "hidden_index": 3,
+          "autograd": -0.11425723052681586,
+          "finite_difference": -0.114257230510173,
+          "absolute_error": 1.664285376179464e-11,
+          "relative_error": 1.4566127399603485e-10,
+          "pass": true
+        },
+        {
+          "output_index": 2,
+          "hidden_index": 9,
+          "autograd": 0.0064562059059217435,
+          "finite_difference": 0.00645620590322693,
+          "absolute_error": 2.694813122650075e-12,
+          "relative_error": 4.17398881311754e-10,
+          "pass": true
+        }
+      ],
+      "max_absolute_error": 1.9965029629531728e-11,
+      "max_relative_error": 4.123057379212478e-09,
+      "pass": true
+    }
+  },
+  "shape_checks": {
+    "logits": true,
+    "selected_activation": true,
+    "activation_gradient": true,
+    "weight_gradient": true,
+    "jacobian": true,
+    "singular_values": true
+  },
+  "checks": {
+    "forward_loss_backward": true,
+    "tensor_shapes": true,
+    "no_nan_or_inf": true,
+    "activation_and_weight_gradients_distinguished": true,
+    "chain_rule": true,
+    "finite_difference_jacobian": true,
+    "numerical_rank_in_bounds": true,
+    "float64": true
+  },
+  "all_passed": true,
+  "runtime_seconds": 0.010165399988181889,
+  "errors": []
+}

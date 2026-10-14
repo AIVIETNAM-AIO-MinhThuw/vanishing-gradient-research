@@ -1,0 +1,102 @@
+{
+  "protocol_version": "v1",
+  "created_at": "2026-10-14T19:00:34.5426547+07:00",
+  "status": "APPROVED_NOT_YET_RUN",
+  "gate": "FEASIBILITY_PILOT_ONLY",
+  "preregistration_timestamp": null,
+  "provenance_note": "Created after inspecting the project and after an independent review returned MODIFY. No prior pilot protocol, pilot configuration, subset manifest, log, checkpoint, or D=3/D=12 result was found. This file does not claim retrospective preregistration.",
+  "existing_artifacts_preserved": [
+    "results/smoke_test.json"
+  ],
+  "primary_experiment": {
+    "dataset": "Fashion-MNIST",
+    "arms": [
+      {"arm_id": "primary_d3", "hidden_layers": 3, "xavier_gain": 1.0},
+      {"arm_id": "primary_d12", "hidden_layers": 12, "xavier_gain": 1.0}
+    ],
+    "width": 128,
+    "activation": "tanh",
+    "initialization": "xavier_uniform",
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "batch_size": 64,
+    "max_steps": 100,
+    "checkpoints": [0, 100],
+    "approved_seeds": [42, 123, 2026],
+    "seed_note": "Seeds 42, 123, and 2026 were approved by the researcher before the first pilot run on 2026-10-14; they are not described as previously executed seeds.",
+    "subset": {
+      "train_count": 1024,
+      "validation_count": 256,
+      "selection": "deterministic_stratified_by_class",
+      "selection_seed": 42,
+      "indices_manifest_required_before_model_execution": true
+    }
+  },
+  "measurements": {
+    "primary": [
+      {
+        "name": "raw_early_to_last_gradient_gap",
+        "formula": "log10(G_last) - log10(G_first)",
+        "status": "preserved_primary"
+      }
+    ],
+    "supplementary_exploratory": [
+      {
+        "name": "normalized_gap_per_hidden_layer_interval",
+        "formula": "[log10(G_last) - log10(G_first)] / (D - 1)"
+      },
+      {
+        "name": "layerwise_log_gradient_slope",
+        "formula": "OLS slope of log10(G_l) against actual zero-based hidden-layer index l",
+        "interpretation_limit": "Rate per hidden-layer interval, not total accumulated attenuation."
+      },
+      {
+        "name": "normalized_directional_gain",
+        "formula": "||J^T g||_2 / ||g||_2",
+        "reference_denominator_threshold": 1e-6,
+        "exclusion_rule": "Exclude and count a sample-layer row when ||g||_2 < 1e-6.",
+        "interpretation_limit": "Not independent of activation-gradient magnitude because J^T g is the activation gradient."
+      },
+      {
+        "name": "jacobian_spectrum",
+        "fields": [
+          "singular_values",
+          "sigma_max",
+          "sigma_min",
+          "frobenius_norm",
+          "numerical_rank",
+          "rank_tolerance",
+          "effective_rank_energy_entropy",
+          "condition_number_nonzero_spectrum",
+          "inherent_input_nullity"
+        ],
+        "interpretation_limit": "For a 10x128 Jacobian, inherent input nullity is at least 118 and is not observed rank collapse."
+      }
+    ]
+  },
+  "diagnostic_condition": {
+    "enabled": false,
+    "arm_id": "diagnostic_d12_xavier_gain_0_5",
+    "hidden_layers": 12,
+    "xavier_gain": 0.5,
+    "all_other_settings_match": "primary_d12",
+    "purpose": "Diagnostic sensitivity check for attenuation under smaller initialization scale.",
+    "claim_limit": "Not part of the primary depth contrast and not evidence of naturally occurring vanishing gradients.",
+    "activation_rule": "Enable only after primary pilot completion and only if the researcher supplies a remaining runtime budget."
+  },
+  "runtime_budget": {
+    "approved_total_budget_seconds": 2700,
+    "status": "APPROVED_2026-10-14_BEFORE_FIRST_PILOT_RUN",
+    "priority": ["primary_d3", "primary_d12", "diagnostic", "expensive_spectral_measurements"]
+  },
+  "stop_criteria": [
+    "Stop before model execution if exact subset indices cannot be persisted.",
+    "Stop on NaN or Inf in loss, gradients, logits, Jacobians, or singular values.",
+    "Stop if a run would overwrite an existing run directory or artifact.",
+    "Stop when the approved runtime budget is exhausted.",
+    "Skip the diagnostic before sacrificing either primary arm.",
+    "Do not expand seeds, depths, learning rates, checkpoints, or steps without researcher approval."
+  ],
+  "code_revision": "UNAVAILABLE_NO_GIT_COMMIT",
+  "ai_assistance": "AI prepared this protocol amendment and implementation support; AI did not choose scientific conclusions or alter measured values."
+}

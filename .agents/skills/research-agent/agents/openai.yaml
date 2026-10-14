@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Agent"
+  short_description: "Reality-gated academic research workflow"
+  default_prompt: "Use $research-agent to turn my research idea into evidence-traced artifacts, test reality before implementation, and identify the next researcher decision."
