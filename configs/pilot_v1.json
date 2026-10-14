@@ -31,7 +31,7 @@
     {"arm_id": "primary_d12", "hidden_layers": 12, "xavier_gain": 1.0}
   ],
   "diagnostic": {
-    "enabled": false,
+    "enabled": true,
     "arm_id": "diagnostic_d12_xavier_gain_0_5",
     "hidden_layers": 12,
     "xavier_gain": 0.5

@@ -75,14 +75,14 @@
     ]
   },
   "diagnostic_condition": {
-    "enabled": false,
+    "enabled": true,
     "arm_id": "diagnostic_d12_xavier_gain_0_5",
     "hidden_layers": 12,
     "xavier_gain": 0.5,
     "all_other_settings_match": "primary_d12",
     "purpose": "Diagnostic sensitivity check for attenuation under smaller initialization scale.",
     "claim_limit": "Not part of the primary depth contrast and not evidence of naturally occurring vanishing gradients.",
-    "activation_rule": "Enable only after primary pilot completion and only if the researcher supplies a remaining runtime budget."
+    "activation_rule": "Enabled before the first pilot run after the approved 2700-second budget and CPU benchmark estimated sufficient remaining time; it still runs only after all primary arms are preserved."
   },
   "runtime_budget": {
     "approved_total_budget_seconds": 2700,
