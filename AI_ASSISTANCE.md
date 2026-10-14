@@ -18,3 +18,5 @@ Mọi kết quả trong `results/` phải được xem là artifact kỹ thuật
 
 Ngày 14/10/2026, AI hỗ trợ triển khai đường chạy v2 đã đóng băng, split và batch manifest tái lập, instrumentation gradient và Tanh saturation, lưu checkpoint, Jacobian có điều kiện, unit tests, benchmark, export artifact và thực thi có giới hạn. AI không chọn kết luận, không điều chỉnh cấu hình sau khi xem kết quả và không viết báo cáo nghiên cứu.
 
+Sau kiểm toán độc lập phát hiện gradient/Jacobian probes v2 đều thuộc class 0, AI hỗ trợ một phép đo bổ sung hậu nghiệm trên probe cân bằng nhãn bằng cách chỉ đọc 60 checkpoint weights đã lưu. Phép đo này không chạy training, không sửa v2, không được mô tả như preregistered và không thay người nghiên cứu diễn giải kết quả.
+

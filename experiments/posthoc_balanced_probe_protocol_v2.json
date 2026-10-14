@@ -1,0 +1,37 @@
+{
+  "protocol_version": "v2-posthoc-balanced-probes-1",
+  "status": "FROZEN_BEFORE_MEASUREMENT",
+  "classification": "post_hoc_exploratory_measurement",
+  "created_at": "2026-10-14T21:24:49.2653982+07:00",
+  "source_run_id": "experiment-v2-20261014T2053",
+  "source_git_revision": "4356d5deb3d692ee3da471e11b1b7c7c3f4e8998",
+  "claim_status": "unverified",
+  "issue": "The original validation index list is class-contiguous, while gradient probes used its first 16 indices and Jacobian probes used the first 8 of those indices; all original probes therefore have label 0.",
+  "authorized_scope": "Load the 60 saved v2 checkpoint weights without training and repeat the existing metric definitions on label-balanced probes from the persisted 2,000-image validation subset.",
+  "probe_selection": {
+    "seed": 20261014,
+    "algorithm": "For each label 0 through 9, filter the persisted validation indices in manifest order, apply a seeded torch.randperm to that label's candidates, and take the first four. Preserve label-major order in the output.",
+    "gradient_probes_per_label": 4,
+    "jacobian_probes_per_label": 2,
+    "jacobian_subset_rule": "Use the first two selected gradient probes for each label.",
+    "official_test_used": false
+  },
+  "gradient_measurements": "All 12 depth/seed runs at checkpoints 0,25,100,300,600; definitions unchanged from v2.",
+  "jacobian_measurements": "Depths 3,12,24 at checkpoints 0,100,600 for all seeds; 20 balanced probes and the same representative layers and metric definitions as v2.",
+  "numerical_change_flags": {
+    "not_a_statistical_test": true,
+    "gradient_absolute_delta_threshold": 0.05,
+    "jacobian_symmetric_relative_delta_threshold": 0.20,
+    "definition": "Gradient rows are flagged when absolute mean per-probe raw-gap or slope delta is at least 0.05. Jacobian fields are flagged when |new-old|/max(|old|,|new|,1e-12) is at least 0.20."
+  },
+  "stop_conditions": [
+    "Stop before measurement unless histograms are exactly four and two probes per label.",
+    "Stop if any selected probe overlaps the training subset or leaves the persisted validation subset.",
+    "Stop if any of 60 checkpoint files is absent or fails its recorded SHA-256 hash.",
+    "Stop on non-finite measured values.",
+    "Never instantiate an optimizer or execute a training step.",
+    "Never overwrite the v2 source run or an existing post-hoc output directory."
+  ],
+  "interpretation_limit": "These measurements are post-hoc exploratory corrections of probe coverage, not preregistered v2 evidence and not a new training experiment.",
+  "ai_assistance": "AI implemented and executed the bounded read-only weight remeasurement; the researcher retains interpretation and claim ownership."
+}
