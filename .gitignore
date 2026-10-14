@@ -9,4 +9,6 @@ __pycache__/
 data/
 results/benchmark/
 results/pilot/
+results/audits/
+results/experiment_v2/
 

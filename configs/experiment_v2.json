@@ -1,0 +1,50 @@
+{
+  "protocol": "experiments/experiment_protocol_v2.json",
+  "device": "cpu",
+  "data_root": "data",
+  "results_root": "results/experiment_v2",
+  "runtime_budget_seconds": 1200,
+  "dataset": {
+    "name": "FashionMNIST",
+    "source_split": "official_train",
+    "train_count": 10000,
+    "validation_count": 2000,
+    "subset_seed": 42,
+    "transform": "ToTensor",
+    "official_test_policy": "held_out_unused"
+  },
+  "model": {
+    "input_dim": 784,
+    "width": 128,
+    "hidden_layers": [3, 6, 12, 24],
+    "output_dim": 10,
+    "activation": "tanh",
+    "initialization": "xavier_uniform",
+    "xavier_gain": 1.0
+  },
+  "training": {
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.0,
+    "batch_size": 64,
+    "evaluation_batch_size": 256,
+    "max_steps": 600,
+    "checkpoints": [0, 25, 100, 300, 600],
+    "seeds": [42, 123, 2026]
+  },
+  "measurement": {
+    "fixed_probe_count": 16,
+    "gap_aggregation": "mean_and_median_of_per_probe_log10_ratio",
+    "layer_rms_aggregation": "arithmetic_mean_and_median_across_probes",
+    "saturation_absolute_threshold": 2.0,
+    "preactivation_histogram_boundaries": [-4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
+  },
+  "jacobian": {
+    "enabled_after_all_primary_valid": true,
+    "depths": [3, 12, 24],
+    "checkpoints": [0, 100, 600],
+    "probe_count": 8,
+    "layers": ["first", "middle", "last"],
+    "directional_gain_denominator_threshold": 1e-6
+  }
+}

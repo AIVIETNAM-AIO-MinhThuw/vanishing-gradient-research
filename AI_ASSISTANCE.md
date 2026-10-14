@@ -16,3 +16,5 @@ Sau khi người nghiên cứu phê duyệt ngân sách 2700 giây và seeds 42,
 
 Mọi kết quả trong `results/` phải được xem là artifact kỹ thuật của đúng lệnh chạy đã ghi, không phải kết luận khoa học. Người nghiên cứu chịu trách nhiệm xác nhận thiết kế pilot, metric, ngưỡng chấp nhận và diễn giải.
 
+Ngày 14/10/2026, AI hỗ trợ triển khai đường chạy v2 đã đóng băng, split và batch manifest tái lập, instrumentation gradient và Tanh saturation, lưu checkpoint, Jacobian có điều kiện, unit tests, benchmark, export artifact và thực thi có giới hạn. AI không chọn kết luận, không điều chỉnh cấu hình sau khi xem kết quả và không viết báo cáo nghiên cứu.
+

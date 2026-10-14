@@ -1,0 +1,50 @@
+{
+  "protocol_version": "v2",
+  "status": "FROZEN_BEFORE_FIRST_V2_RUN",
+  "gate": "FULL_RUN_READY",
+  "frozen_at": "2026-10-14T20:50:57.6114462+07:00",
+  "created_after_pilot_v1": true,
+  "preregistration_claim": false,
+  "scope": "AIO2026 bounded main experiment; not a publication claim package",
+  "primary_question": "How does plain-MLP hidden depth relate to observed gradient propagation under the frozen Fashion-MNIST training procedure?",
+  "claim_status_before_run": "hypothesis",
+  "primary_contrast": {
+    "hidden_layers": [3, 6, 12, 24],
+    "seeds": [42, 123, 2026],
+    "checkpoints": [0, 25, 100, 300, 600],
+    "fixed_configuration": "configs/experiment_v2.json"
+  },
+  "aggregation_contract": {
+    "layerwise_rms": "For each hidden layer, arithmetic mean and median of per-probe RMS values.",
+    "raw_gap": "For each probe: log10(G_last/G_first); summarize those per-probe gaps by mean and median.",
+    "normalized_gap": "Per-probe raw gap divided by D-1; summarize by mean and median.",
+    "slope": "Per-probe OLS slope of log10(layer RMS) against zero-based hidden-layer index; summarize by mean and median.",
+    "warning": "Mean log-ratio is not log-ratio of arithmetic mean RMS values; both are exported under distinct names."
+  },
+  "experimental_unit": "One Fashion-MNIST image-label pair from a persisted stratified subset of the official training split.",
+  "split_policy": "10,000 training and 2,000 validation indices are sampled without overlap from the official training split; official test is untouched.",
+  "missingness_and_exclusion": "Stop a primary run on non-finite loss/gradient/activation. Directional gain excludes and counts only denominators below 1e-6.",
+  "conditional_jacobian": "Run only after 12 valid primary runs, and skip before sacrificing primary completion or exceeding 1,200 seconds.",
+  "pre_run_evidence": {
+    "unit_tests": "16/16 PASS before freeze",
+    "d24_cpu_benchmark": "results/benchmark/experiment_v2_cpu_d24.json",
+    "benchmark_observed_seconds": {
+      "setup": 1.0819850000552833,
+      "training_10_steps": 0.06408509984612465,
+      "one_checkpoint_measurement": 0.2992732001002878,
+      "one_8_probe_3_layer_jacobian_snapshot": 0.1453100999351591
+    },
+    "estimated_total_with_20_percent_margin_seconds": 82.92362591223791,
+    "approved_budget_seconds": 1200
+  },
+  "stop_conditions": [
+    "Stop before primary execution if tests fail or subset/order manifests cannot be saved.",
+    "Stop if the D=24 benchmark predicts primary completion cannot fit within 1,200 seconds.",
+    "Stop the affected run on NaN or Inf and preserve completed runs and logs.",
+    "Do not change optimizer, learning rate, depth, seed, steps, split, or checkpoint schedule after freeze.",
+    "Skip Jacobian measurements if the remaining runtime budget is insufficient."
+  ],
+  "v1_preservation": "All protocol-v1, pilot-v1, audit and smoke artifacts remain immutable and use distinct paths.",
+  "code_revision_policy": "The commit containing this frozen protocol is recorded in the run environment and log; no self-referential hash is embedded here.",
+  "ai_assistance": "AI prepared implementation, checks, execution support and artifact packaging. The researcher owns interpretation and final conclusions."
+}
