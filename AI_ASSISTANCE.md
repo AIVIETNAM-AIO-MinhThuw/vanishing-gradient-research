@@ -12,5 +12,7 @@ AI không viết báo cáo nghiên cứu, không tạo kết quả để giả l
 
 Ngày 14/10/2026, sau verdict `MODIFY` từ một phản biện độc lập, AI đã hỗ trợ ghi protocol pilot v1 trước khi có run mới; triển khai các metric gradient gap, normalized gap, layer-index slope, normalized directional gain và Jacobian spectrum; thêm cơ chế chống ghi đè, subset manifest và unit tests. Các metric bổ sung được ghi rõ là supplementary/exploratory. AI không chạy pilot, không thay đổi kết quả smoke test và không tạo kết luận khoa học.
 
+Sau khi người nghiên cứu phê duyệt ngân sách 2700 giây và seeds 42, 123, 2026, AI đã cài dependency, kiểm tra Fashion-MNIST, chạy unit tests, benchmark CPU và thực thi feasibility pilot `pilot-v1-20261014T1920`. AI chỉ lưu và tóm tắt các quan sát đo được; diagnostic gain=0.5 và Jacobian spectrum vẫn được phân loại supplementary/exploratory, không phải primary contrast hay kết luận khoa học.
+
 Mọi kết quả trong `results/` phải được xem là artifact kỹ thuật của đúng lệnh chạy đã ghi, không phải kết luận khoa học. Người nghiên cứu chịu trách nhiệm xác nhận thiết kế pilot, metric, ngưỡng chấp nhận và diễn giải.
 
